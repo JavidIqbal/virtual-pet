@@ -16,9 +16,13 @@ describe('constructor', () => {
                 expect(pet.age).toEqual(0);
             });
 
-            describe('hunger', () => {
-                it('sets the hunger property', () => {
-                    expect(pet.hunger).toEqual(0);
+            describe('feed', () => {
+                it('sets the hunger property to reduce by 3, no less than 0', () => {
+                    const pet = new Pet('fido');
+                    pet.hunger = 5;
+                    pet.feed();
+                    expect(pet.hunger).toEqual(2);
+
                 });
 
                 describe('fitness', () => {
